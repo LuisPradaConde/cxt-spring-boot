@@ -25,3 +25,16 @@ public class CityController {
 		cities.add(city5);
 	return cities;
 	}
+	
+	@GetMapping("/cities/{id}")
+	public City hola(@PathVariable Integer id){
+
+		ArrayList<City> cities = new ArrayList<>();
+		cities.add(city1);
+		cities.add(city2);
+		cities.add(city3);
+		cities.add(city4);
+		cities.add(city5);
+		return cities.get(id-1);
+	}
+}
