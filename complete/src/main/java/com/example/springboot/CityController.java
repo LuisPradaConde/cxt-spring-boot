@@ -13,6 +13,12 @@ public class CityController {
 	City city4 = new City(4,"Ourense","Ourense");
 	City city5 = new City(5,"Redondela","Pontevedra");
 
+	Country country1 = new Country(1,"España","Madrid");
+	Country country2 = new Country(2,"Francia","Paris");
+	Country country3 = new Country(3,"Portugal","Lisboa");
+	Country country4 = new Country(4,"Alemania","Berlin");
+	Country country5 = new Country(5,"Andorra","Andorra la Vieja");
+
 
 
 	@GetMapping("/cities")
@@ -36,5 +42,28 @@ public class CityController {
 		cities.add(city4);
 		cities.add(city5);
 		return cities.get(id-1);
+	}
+
+	@GetMapping("/countries")
+	public ArrayList<Country> CountryList() {
+		ArrayList<Country> countries = new ArrayList<>();
+		countries.add(country1);
+		countries.add(country2);
+		countries.add(country3);
+		countries.add(country4);
+		countries.add(country5);
+	return countries;
+	}
+
+	@GetMapping("/countries/{id}")
+	public Country CountryId(@PathVariable Integer id) {
+		
+		ArrayList<Country> countries = new ArrayList<>();
+		countries.add(country1);
+		countries.add(country2);
+		countries.add(country3);
+		countries.add(country4);
+		countries.add(country5);
+	return countries.get(id-1);
 	}
 }
